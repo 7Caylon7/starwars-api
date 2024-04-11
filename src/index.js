@@ -1,9 +1,12 @@
 const express = require("express");
 const mongoose = require("mongoose"); //biblioteca do mongodb
+const cors = require('cors');
+require("dotenv").config()
 
 
 
 const app = express() //essa é uma aplicação express
+app.use(cors()); // Isso permite solicitações de todas as origens
 app.use(express.json()) //lendo requisição de dados de JSON
 const port = 3000 //aplicação vai usar a porta 3000
 
@@ -58,6 +61,8 @@ app.post("/", async(req,res) => {
 })
 
 app.listen(port, () => {
-    mongoose.connect('mongodb+srv://cayloncosta:x4sHndONKf8jCVDu@starwar-api.t6xuan0.mongodb.net/?retryWrites=true&w=majority&appName=starwar-api');
     console.log('App running')
 })
+
+
+require("../database/connection")

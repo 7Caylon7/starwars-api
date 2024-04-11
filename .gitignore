@@ -1,0 +1,16 @@
+# Arquivos de log
+logs
+*.log
+
+# Diretório de node_modules
+node_modules
+
+# Arquivo de ambiente local
+.env
+
+# Arquivos de compilação e build
+/build
+
+# Arquivos de configuração específicos do usuário
+.idea/
+.vscode/
