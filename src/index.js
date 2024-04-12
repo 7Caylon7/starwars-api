@@ -3,12 +3,15 @@ const mongoose = require("mongoose");
 const cors = require('cors');
 require("dotenv").config()
 
+const dbUser = process.env.DB_USER;
+const dbPassword = process.env.DB_PASS;
+
 const app = express();
 app.use(cors());
 app.use(express.json());
 
 // Criando a conexão com o banco de dados
-mongoose.connect(`mongodb+srv://${dbUser}:${dbPassword}@starwar-api.t6xuan0.mongodb.net/test?retryWrites=true&w=majority&appName=starwar-api`, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(`mongodb+srv://${dbUser}:${dbPassword}@starwar-api.t6xuan0.mongodb.net/test?retryWrites=true&w=majority&appName=starwar-api`)
 
 
 const db = mongoose.connection;
@@ -17,7 +20,7 @@ db.once("open", function() {
     console.log("Conectado ao banco de dados");
 });
 
-const port = process.env.PORT || 3003;
+const port = process.env.PORT || 3000;
 
 const Filme = mongoose.model('Film', {
     title: String,
