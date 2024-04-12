@@ -8,7 +8,8 @@ app.use(cors());
 app.use(express.json());
 
 // Criando a conexão com o banco de dados
-mongoose.connect(process.env.DB_CONNECTION_STRING, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(`mongodb+srv://${dbUser}:${dbPassword}@starwar-api.t6xuan0.mongodb.net/test?retryWrites=true&w=majority&appName=starwar-api`, { useNewUrlParser: true, useUnifiedTopology: true });
+
 
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "Erro ao conectar o banco de dados:"));
