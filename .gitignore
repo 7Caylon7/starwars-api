@@ -14,3 +14,4 @@ node_modules
 # Arquivos de configuração específicos do usuário
 .idea/
 .vscode/
+.vercel

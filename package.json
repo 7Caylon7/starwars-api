@@ -4,7 +4,8 @@
   "description": "starwars-pai desenvolvida em node.js com mongodb",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node src/index.js"
   },
   "author": "Caylon Solon",
   "license": "ISC",
@@ -12,6 +13,8 @@
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
-    "mongoose": "^8.3.1"
+    "g": "^2.0.1",
+    "mongoose": "^8.3.1",
+    "vercel": "^34.0.0"
   }
 }
