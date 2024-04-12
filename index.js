@@ -27,10 +27,11 @@ const Filme = mongoose.model('Film', {
     description: String,
     image_url: String,
     trailer_url: String,
+    createdAt: {type: Date, default: Date.now }
 });
 
 app.get("/", async(req, res) => {
-    const films = await Filme.find();
+    const films = await Filme.find().sort({ createdAt: -1 });
     return res.send(films);
 });
 
